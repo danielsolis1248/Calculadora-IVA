@@ -1,0 +1,58 @@
+/*Importacion de fuentes de Google*/
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
+@import url('https://fonts.cdnfonts.com/css/br-cobane');
+@import url('https://fonts.cdnfonts.com/css/fjalla-one-2');
+
+body {
+    background-image: url(Imagenes/impuestos.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: unset;
+}
+
+/*Titulo principal*/
+.titulo-principal {
+    font-family: 'Segoe UI', sans-serif;                                            
+    font-style: normal;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    color: rgb(58, 58, 58);
+}
+
+/*Subtitulo*/
+.subtitulo {
+    font-family: 'BR Cobane', sans-serif;
+    font-style: normal;
+    text-align: center;
+    font-weight: 300;
+    font-size: 30px;
+}
+
+/*Contenedor de Body*/
+.cont-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Contenedor de calculadora con textos*/
+.cont-calculadora {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.139); /* Fondo semitransparente */
+    backdrop-filter: blur(8px); /* Difumina lo que está detrás */
+    border-radius: 15px;
+}
+
+/*Texto de area de calculadora*/
+h3 {
+    font-family: 'Fjalla One', sans-serif;
+    font-style: normal;
+    text-align: left;
+    font-weight: normal;
+    font-size: 20px;
+}
