@@ -13,28 +13,51 @@
 
 <body>
     <div class="cont-body">
+        <!--Titulo y subtitulo-->
         <h1 class="titulo-principal">Calculadora de IVA</h1>
         <h2 class="subtitulo">Ingrese el precio de su producto</h2>
 
+        <!--Contenido de calculadora-->
         <div class="cont-calculadora">
             <h3>Precio del producto</h3>
+            
+            <!--Caja de texto Precio-->
             <div class="caja-texto">
                 <span class="simbolo-input">$</span>
-                <input type="number" class="precio">
+                <input type="text" class="precio" id="precio" placeholder="Escribe el precio">
             </div>
-            <br>
+            <br>            
             <h3>Porcentaje de IVA</h3>
+            
+            <!--Caja de texto IVA-->
             <div class="caja-texto">
                 <span class="simbolo-input">%</span>
-                <input type="number" class="IVA">
+                <input class="IVA" id="IVA" type="text" min="0" placeholder="Escribe el % ">
             </div>
             <br>
+
+            <!--Botones-->
             <div class="cont-botones">
-                <button class="calcular-IVA" role="button">Calcular IVA</button>
-                <button class="limpiar" role="button">Limpiar</button>
+                <!--Boton para calcular IVA-->
+                <button class="calcular-IVA" role="button" onclick="calcularIVA()">
+                    <img src="Imagenes/calculadora.svg" class="icono-btn">
+                    Calcular IVA 
+                </button>
+                
+                <!--Boton para limpiar los campos de texto-->
+                <button class="limpiar" role="button" onclick="limpiarCampos()">
+                    <img src="Imagenes/basura.svg" class="icono-btn">
+                    Limpiar
+                </button>
             </div>   
         </div>
-
+        
+        <!--Modal de resultado-->
+        <div id="modal" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar" onclick="cerrarModal()">&times;</span>
+                <p id="resultado"></p>
+            </div>
         </div>
     </div>
 </body>
