@@ -21,7 +21,7 @@ body {
   font-weight: 600;
   font-size: 40px;
   color: rgb(58, 58, 58);
-  margin:10px auto;
+  margin:20px auto;
 }
 
 /*Subtitulo*/
@@ -30,7 +30,8 @@ body {
   font-style: normal;
   text-align: center;
   font-weight: 300;
-  font-size: 40px;
+  font-size: 34px;
+  margin-bottom: 70px;
 }
 
 /*Contenedor de Body*/
