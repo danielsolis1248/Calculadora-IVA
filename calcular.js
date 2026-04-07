@@ -1,9 +1,10 @@
+//Validar que cada 3 digitos se ponga una coma
 document.addEventListener("DOMContentLoaded", () => {
     const input = document.querySelector(".precio");
     input.addEventListener('input', (e) => {
         let valor = e.target.value.replace(/\D/g, "");
         if (valor) {
-            valor = parseInt(valor).toLocaleString('en-US');
+            valor = parseInt(valor).toLocaleString('');
         }
         e.target.value = valor;
     });
@@ -12,17 +13,23 @@ document.addEventListener("DOMContentLoaded", () => {
 //Funcion para calcular el IVA
 function calcularIVA () {
     //Variables del precio y el portentaje de IVA
-    let precio = document.querySelector('.precio');
-    let porcentajeIVA = document.querySelector('.IVA');
+    let precio = parseFloat(document.querySelector('.precio').value);
+    let porcentajeIVA = parseFloat(document.querySelector('.IVA').value);
+
+    //Validacion de que sean numeros
+    if(isNaN(precio) || isNaN(porcentajeIVA)) {
+        alert("Ingresa valores validos en ambos campos");
+        return;
+    }
     
     //Variable para almacenar el IVA del precio original
-    let IVA_calculado = porcentajeIVA*precio/100;
+    let IVA_calculado = precio * (porcentajeIVA / 100);
     
     //Operacion para añadir el IVA al producto
     let precioFinal = precio + IVA_calculado;
 
     //Mostrar el resultado en el modal
-    document.getElementById("resultado").textContent = "El precio final de tu producto con IVA es: " + precioFinal;
+    document.getElementById("resultado").textContent = "El precio final de tu producto con IVA es: $" + precioFinal.toFixed(2);
     document.getElementById("modal").style.display = "block";
 }
 
