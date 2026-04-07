@@ -1,12 +1,21 @@
 //Validar que cada 3 digitos se ponga una coma
 document.addEventListener("DOMContentLoaded", () => {
-    const input = document.querySelector(".precio");
-    input.addEventListener('input', (e) => {
-        let valor = e.target.value.replace(/\D/g, "");
-        if (valor) {
-            valor = parseInt(valor).toLocaleString('en-US');
+    //Formatear el input con comas pero permitir las decimales
+    const inputPrecio = document.querySelector(".precio");
+    inputPrecio.addEventListener("input", (e) => {
+        //Mantener digitos y el punto decimal
+        let valor = e.target.value.replace(/[^0-9.]/g, "");
+
+        //Separar parte entera y decimal
+        let partes = valor.split(".");
+        let parteEntera = partes[0];
+        let parteDecimal = partes[1] !== undefined ? "." + partes[1] : "";
+
+        //Formatear la parte entera en comas
+        if (parteEntera) {
+            parteEntera = parseInt(parteEntera, 10).toLocaleString("en-US")
         }
-        e.target.value = valor;
+        e.target.value = parteEntera + parteDecimal
     });
 });
 
@@ -33,7 +42,7 @@ function calcularIVA () {
     let precioFinal = precio + IVA_calculado;
 
     //Mostrar el resultado en el modal
-    document.getElementById("resultado").textContent = "El precio final de tu producto con IVA es: $" + precioFinal.toLocaleString('en-US', {miniumFractionDigits: 2});
+    document.getElementById("resultado").textContent = "$" + precioFinal.toLocaleString('en-US', {miniumFractionDigits: 2});
     document.getElementById("modal").style.display = "block";
 }
 
