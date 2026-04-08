@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (parteEntera) {
             parteEntera = parseInt(parteEntera, 10).toLocaleString("en-US")
         }
-        e.target.value = parteEntera + parteDecimal
+        e.target.value = parteEntera + parteDecimal;
     });
 });
 
